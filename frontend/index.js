@@ -11,14 +11,14 @@ imageForm.addEventListener("submit", async event => {
   console.log(url)
 
   // post the image direclty to the s3 bucket
-  await fetch(url, {
+ const ress = await fetch(url, {
     method: "PUT",
     headers: {
       "Content-Type": "multipart/form-data"
     },
     body: file
   })
-
+console.log(ress)
   const imageUrl = url.split('?')[0]
   console.log(imageUrl)
 
